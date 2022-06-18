@@ -15,5 +15,9 @@ namespace WebMallApi.Data
         }
 
         public DbSet<WebMallApi.Models.Product>? Product { get; set; }
+
+        public DbSet<WebMallApi.Models.Inventory>? Inventory { get; set; }
+
+        public DbSet<WebMallApi.Models.Warehouse>? Warehouse { get; set; }
     }
 }
