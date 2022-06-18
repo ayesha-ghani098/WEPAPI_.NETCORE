@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WebMallApi.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<WebMallApiContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebMallApiContext") ?? throw new InvalidOperationException("Connection string 'WebMallApiContext' not found.")));
 
 // Add services to the container.
 
